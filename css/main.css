@@ -1,4 +1,10 @@
-
+* {
+    box-sizing: border-box;
+}
+header {
+    border: 1px solid green;
+    padding: 15px;
+}
 body{
     font-family: 'Montserrat', sans-serif;
 }
@@ -17,7 +23,7 @@ canvas{
     text-align: center;
 }
 #social li{
-    padding: 30px;
+    padding: 10px;
     display: inline;
 }
 h1{
@@ -31,6 +37,13 @@ h2{
 }
 h3{
     margin: 0px;
+}
+ul li{
+    list-style-type: circle
+}
+#col1, #col2 {
+    width: 50%;
+    border: 1px solid green;
 }
 p{
     margin: 0 0 5px 0;
