@@ -24,96 +24,98 @@
     </script>
 </head>
 <body>
-<h1>Hey! This is Constantinos</h1>
-<canvas id="canvas" width="200" height="200">
-</canvas>
-<script>
-    var canvas = document.getElementById("canvas");
-    var ctx = canvas.getContext("2d");
-    var radius = canvas.height / 2;
-    ctx.translate(radius, radius);
-    radius = radius * 0.90
-    //drawClock();
-    setInterval(drawClock, 1000);
+<header>
+    <h1>Hey! This is Constantinos</h1>
+    <canvas id="canvas" width="200" height="200"></canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        var radius = canvas.height / 2;
+        ctx.translate(radius, radius);
+        radius = radius * 0.90
+        //drawClock();
+        setInterval(drawClock, 1000);
 
-    function drawClock() {
-        drawFace(ctx, radius);
-        drawNumbers(ctx, radius);
-        drawTime(ctx, radius);
-    }
-
-    function drawFace(ctx, radius) {
-        var grad;
-        ctx.beginPath();
-        ctx.arc(0, 0, radius, 0, 2*Math.PI);
-        ctx.fillStyle = 'white';
-        ctx.fill();
-        grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
-        grad.addColorStop(0, '#333');
-        grad.addColorStop(0.5, 'white');
-        grad.addColorStop(1, '#333');
-        ctx.strokeStyle = grad;
-        ctx.lineWidth = radius*0.1;
-        ctx.stroke();
-        ctx.beginPath();
-        ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
-        ctx.fillStyle = '#333';
-        ctx.fill();
-    }
-
-    function drawNumbers(ctx, radius) {
-        var ang;
-        var num;
-        ctx.font = radius*0.15 + "px arial";
-        ctx.textBaseline="middle";
-        ctx.textAlign="center";
-        for(num = 1; num < 13; num++){
-            ang = num * Math.PI / 6;
-            ctx.rotate(ang);
-            ctx.translate(0, -radius*0.85);
-            ctx.rotate(-ang);
-            ctx.fillText(num.toString(), 0, 0);
-            ctx.rotate(ang);
-            ctx.translate(0, radius*0.85);
-            ctx.rotate(-ang);
+        function drawClock() {
+            drawFace(ctx, radius);
+            drawNumbers(ctx, radius);
+            drawTime(ctx, radius);
         }
-    }
 
-    function drawTime(ctx, radius){
-        var now = new Date();
-        var hour = now.getHours();
-        var minute = now.getMinutes();
-        var second = now.getSeconds();
-        //hour
-        hour=hour%12;
-        hour=(hour*Math.PI/6)+
-                (minute*Math.PI/(6*60))+
-                (second*Math.PI/(360*60));
-        drawHand(ctx, hour, radius*0.5, radius*0.07);
-        //minute
-        minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
-        drawHand(ctx, minute, radius*0.8, radius*0.07);
-        // second
-        second=(second*Math.PI/30);
-        drawHand(ctx, second, radius*0.9, radius*0.02);
-    }
+        function drawFace(ctx, radius) {
+            var grad;
+            ctx.beginPath();
+            ctx.arc(0, 0, radius, 0, 2*Math.PI);
+            ctx.fillStyle = 'white';
+            ctx.fill();
+            grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+            grad.addColorStop(0, '#333');
+            grad.addColorStop(0.5, 'white');
+            grad.addColorStop(1, '#333');
+            ctx.strokeStyle = grad;
+            ctx.lineWidth = radius*0.1;
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+            ctx.fillStyle = '#333';
+            ctx.fill();
+        }
 
-    function drawHand(ctx, pos, length, width) {
-        ctx.beginPath();
-        ctx.lineWidth = width;
-        ctx.lineCap = "round";
-        ctx.moveTo(0,0);
-        ctx.rotate(pos);
-        ctx.lineTo(0, -length);
-        ctx.stroke();
-        ctx.rotate(-pos);
-    }
-</script>
-<ul id="social">
-    <li><a href="https://www.facebook.com/constantinos.georgiou98" target="_blank"><i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i></a></li>
-    <li><a href="https://cy.linkedin.com/in/constantinosgeorgiou"target="_blank"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a></li>
-    <li><a href="https://www.youtube.com/channel/UC7KNllcUSufBtWCNnrurhDQ"target="_blank"><i class="fa fa-youtube-play fa-3x" aria-hidden="true"></i></a></li>
-</ul>
+        function drawNumbers(ctx, radius) {
+            var ang;
+            var num;
+            ctx.font = radius*0.15 + "px arial";
+            ctx.textBaseline="middle";
+            ctx.textAlign="center";
+            for(num = 1; num < 13; num++){
+                ang = num * Math.PI / 6;
+                ctx.rotate(ang);
+                ctx.translate(0, -radius*0.85);
+                ctx.rotate(-ang);
+                ctx.fillText(num.toString(), 0, 0);
+                ctx.rotate(ang);
+                ctx.translate(0, radius*0.85);
+                ctx.rotate(-ang);
+            }
+        }
+
+        function drawTime(ctx, radius){
+            var now = new Date();
+            var hour = now.getHours();
+            var minute = now.getMinutes();
+            var second = now.getSeconds();
+            //hour
+            hour=hour%12;
+            hour=(hour*Math.PI/6)+
+                    (minute*Math.PI/(6*60))+
+                    (second*Math.PI/(360*60));
+            drawHand(ctx, hour, radius*0.5, radius*0.07);
+            //minute
+            minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
+            drawHand(ctx, minute, radius*0.8, radius*0.07);
+            // second
+            second=(second*Math.PI/30);
+            drawHand(ctx, second, radius*0.9, radius*0.02);
+        }
+
+        function drawHand(ctx, pos, length, width) {
+            ctx.beginPath();
+            ctx.lineWidth = width;
+            ctx.lineCap = "round";
+            ctx.moveTo(0,0);
+            ctx.rotate(pos);
+            ctx.lineTo(0, -length);
+            ctx.stroke();
+            ctx.rotate(-pos);
+        }
+    </script>
+    <ul id="social">
+        <li><a href="https://www.facebook.com/constantinos.georgiou98" target="_blank"><i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i></a></li>
+        <li><a href="https://cy.linkedin.com/in/constantinosgeorgiou"target="_blank"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.youtube.com/channel/UC7KNllcUSufBtWCNnrurhDQ"target="_blank"><i class="fa fa-youtube-play fa-3x" aria-hidden="true"></i></a></li>
+    </ul>
+</header>
+
 <h2>It's nice to see you here...</h2>
 <p>Welcome to my first personal website, it's not much, i know, but we will evolve over time.</p>
 <p>Here you can find all the stuff i made throughout the years with links and such...</p>
@@ -121,7 +123,7 @@
 <p>I'm a highly motivated person interested in studying game design.</p>
 <h2>Education</h2>
 <h3>Saint George Highschool | Apolytirion Diploma</h3>
-<p>Practical stream:</p>
+    <p>Practical stream:</p>
 <ul>
     <li>Physics</li>
     <li>Mathematics</li>
@@ -129,42 +131,45 @@
     <li>Computing</li>
     <li>CISCO</li>
 </ul>
-<p>Activities and Societies:</p>
+    <p>Activities and Societies:</p>
 <ul>
     <li>Theatre society</li>
     <li>Game design competition</li>
     <li>Physics competition</li>
     <li>Blood donation competition</li>
 </ul>
-
 <h2>Skills & Endorsements</h2>
-<h3>Top Skills</h3>
-<ul>
-    <li>Cisco Technologies</li>
-    <li>CCENT</li>
-    <li>Cisco Routers</li>
-    <li>Cisco VoIP</li>
-    <li>Pascal</li>
-</ul>
-<h3>I also know about...</h3>
-<ul>
-    <li>Visual Basic</li>
-    <li>HTML</li>
-    <li>Game Design</li>
-    <li>Game Development</li>
-    <li>Game Art</li>
-    <li>Game Maker</li>
-    <li>After Effects</li>
-    <li>Photoshop</li>
-    <li>Sony Vegas</li>
-    <li>Sony Vegas Video</li>
-    <li>Camtasia</li>
-    <li>Teamwork</li>
-    <li>Creativity Skills</li>
-    <li>Communication</li>
-    <li>Mathematics</li>
-    <li>Physics</li>
-</ul>
+<div id="col1">
+    <h3>Top Skills</h3>
+    <ul>
+        <li>Cisco Technologies</li>
+        <li>CCENT</li>
+        <li>Cisco Routers</li>
+        <li>Cisco VoIP</li>
+        <li>Pascal</li>
+    </ul>
+</div>
+<div id="col2">
+    <h3>I also know about...</h3>
+    <ul>
+        <li>Visual Basic</li>
+        <li>HTML</li>
+        <li>Game Design</li>
+        <li>Game Development</li>
+        <li>Game Art</li>
+        <li>Game Maker</li>
+        <li>After Effects</li>
+        <li>Photoshop</li>
+        <li>Sony Vegas</li>
+        <li>Sony Vegas Video</li>
+        <li>Camtasia</li>
+        <li>Teamwork</li>
+        <li>Creativity Skills</li>
+        <li>Communication</li>
+        <li>Mathematics</li>
+        <li>Physics</li>
+    </ul>
+</div>
 <h2>Projects</h2>
 <h3><a href="https://desolate-scrubland-49169.herokuapp.com/" target="_blank">Challenge: Clear for Take Off - BePrepared</a></h3>
 <p>Participated at the International Space Apps Challenge Limassol 2016</p>
