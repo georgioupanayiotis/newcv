@@ -1,29 +1,24 @@
 * {
     box-sizing: border-box;
+    color: #144955;
 }
 header {
-    border: 1px solid green;
     padding: 15px;
+}
+img{
+    margin: 0px auto;display:block
 }
 body{
     font-family: 'Montserrat', sans-serif;
 }
-canvas{
-    padding-left: 0;
-    padding-right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    width: 100px;
-}
 #social li a{
-    color: #e67e22;
+    color: #F14C38;
 }
 #social{
     text-align: center;
 }
 #social li{
-    padding: 10px;
+    padding: 3px;
     display: inline;
 }
 h1{
@@ -33,7 +28,7 @@ h1{
 h2{
     margin-bottom: 5px;
     font-size: 20px;
-    color: #e67e22;
+    color: #F14C38;
 }
 h3{
     margin: 0px;
@@ -43,14 +38,13 @@ ul li{
 }
 #col1, #col2 {
     width: 50%;
-    border: 1px solid green;
 }
 p{
     margin: 0 0 5px 0;
     font-size: 16px;
 }
 a{
-    color: #2aa09b;
+    color: #167ac6;
     text-decoration: none;
 }
 a:hover{
