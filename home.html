@@ -33,6 +33,7 @@
             a.appendChild(r);
         })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 </head>
 <body>
 <header>
@@ -48,7 +49,7 @@
     <p>Someone who has a pragmatic approach to things. Only one question matters to me: ‘Does it work or not?'</p>
     <p>Here you can find all the stuff i made throughout the years with links and such...</p>
 </header>
-<div id="lpad">
+<div id="midSection">
     <h2><i class="fa fa-book" aria-hidden="true"></i> Summary</h2>
     <p>I am someone who has a very creative mind. I always have a unique perspective when approaching an issue due to my broad range of interests and hobbies. Creativity is the source of differentiation and therefore, at the root of competitive advantage.</p>
     <h2><i class="fa fa-graduation-cap" aria-hidden="true"></i> Education</h2>
@@ -156,18 +157,40 @@
     <p>Birthday | October 10</p>
     <p>Marital Status | Single</p>
 </div>
-<div id="socialico">
-    <h3>Stay tuned, Stay connected...</h3>
-    <ul id="sicons">
-        <li><a href="mailto:constantinos.georgiou1998@gmail.com" target="_blank"><i class="fa fa-envelope fa-3x social"></i></a></li>
-        <li><a href="https://www.facebook.com/constantinos.georgiou98" target="_blank"><i class="fa fa-facebook fa-3x social"></i></a></li>
-        <li><a href="https://cy.linkedin.com/in/constantinosgeorgiou" target="_blank"><i class="fa fa-linkedin fa-3x social"></i></a></li>
-        <li><a href="https://github.com/ConstantinosGeorgiou" target="_blank"><i class="fa fa-github fa-3x social"></i></a></li>
-        <li><a href="https://www.youtube.com/channel/UC7KNllcUSufBtWCNnrurhDQ" target="_blank"><i class="fa fa-youtube-play fa-3x social"></i></a></li>
-    </ul>
-</div>
 <footer>
+    <div id="socialico">
+        <h3>Stay tuned, Stay connected...</h3>
+        <ul id="sicons">
+            <li><a href="mailto:constantinos.georgiou1998@gmail.com" target="_blank"><i class="fa fa-envelope fa-3x social"></i></a></li>
+            <li><a href="https://www.facebook.com/constantinos.georgiou98" target="_blank"><i class="fa fa-facebook fa-3x social"></i></a></li>
+            <li><a href="https://cy.linkedin.com/in/constantinosgeorgiou" target="_blank"><i class="fa fa-linkedin fa-3x social"></i></a></li>
+            <li><a href="https://github.com/ConstantinosGeorgiou" target="_blank"><i class="fa fa-github fa-3x social"></i></a></li>
+            <li><a href="https://www.youtube.com/channel/UC7KNllcUSufBtWCNnrurhDQ" target="_blank"><i class="fa fa-youtube-play fa-3x social"></i></a></li>
+        </ul>
+    </div>
     <small>© Copyright 2016, Constantinos Georgiou</small>
+    <a href="#" class="go-top"><i class="fa fa-chevron-circle-up fa-2x" aria-hidden="true"></i></a>
 </footer>
+<!-- JavaScript -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Show or hide the sticky footer button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                $('.go-top').fadeIn(200);
+            } else {
+                $('.go-top').fadeOut(200);
+            }
+        });
+
+        // Animate the scroll to top
+        $('.go-top').click(function(event) {
+            event.preventDefault();
+
+            $('html, body').animate({scrollTop: 0}, 300);
+        })
+    });
+</script>
 </body>
 </html>

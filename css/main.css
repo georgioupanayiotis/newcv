@@ -4,7 +4,7 @@
 }
 header {
     margin-top: 3%;
-    margin-bottom: 3%;
+    margin-bottom: 2%;
     padding: 15px;
     text-align: center;
     background-color: white;
@@ -13,21 +13,22 @@ header {
 header ul{
     padding-left: 0px;
 }
-#avatar{
-    -webkit-filter: drop-shadow(2px 2px 2px #222);
-    filter: drop-shadow(1px 1px 1px #222);
-}
-img{
-    margin: 0px auto;display:block
-}
 body{
     font-family: 'Montserrat', sans-serif;
     background-color: #F4F1E0;
     padding-right: 2%;
     padding-left: 2%;
 }
-#social li a{
-    color: #F14C38;
+footer{
+    text-align: center;
+}
+h1{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+#avatar{
+    -webkit-filter: drop-shadow(2px 2px 2px #222);
+    filter: drop-shadow(1px 1px 1px #222);
 }
 #social{
     text-align: center;
@@ -37,31 +38,27 @@ body{
     padding-right: 3%;
     padding-left: 3%;
 }
-h1{
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
+#social li a{
+    color: #F14C38;
 }
-#lpad{
-    padding-top: 3%;
+#midSection{
+    padding-top: 2%;
     padding-left: 10%;
     padding-right: 10%;
     padding-bottom: 3%;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-h2{
+#midSection h2{
     margin-bottom: 5px;
     font-size: 20px;
     color: #F14C38;
 }
-h3{
+#midSection h3{
     margin: 0px;
 }
 ul li{
     list-style: none;
-}
-#col1, #col2 {
-    width: 50%;
 }
 p{
     margin: 0 0 5px 0;
@@ -75,13 +72,22 @@ a:hover{
     text-decoration: underline;
 }
 #socialico{
-    margin-top: 3%;
+    margin-top: 2%;
     background-color: #144955;
 }
 #socialico h3{
     padding-top: 2%;
     text-align: center;
     color: #F4F1E0;
+}
+#sicons{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 1%;
+    padding-left: 0px;
+    text-align: center;
+}
+#sicons li{
+    display: inline;
 }
 .social{
     color: #F4F1E0;
@@ -93,20 +99,25 @@ a:hover{
 .social:hover{
     color: #F14C38;
 }
-#sicons{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: 1%;
-    padding-left: 0px;
-    text-align: center;
+/***********************************************************************************************/
+/* Button */
+/***********************************************************************************************/
+.go-top {
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    text-decoration: none;
+    padding: 1em;
+    display: none;
 }
-#sicons li{
-    display: inline;
+.go-top i{
+    color: #F14C38;
 }
-footer{
-    text-align: center;
+.go-top:hover {
+    background-color: #F14C38);
 }
 @media only screen and (max-width: 500px) {
-    #lpad{
+    #midSection{
         padding: 10px;
         background-color: white;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
