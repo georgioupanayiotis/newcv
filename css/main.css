@@ -35,11 +35,50 @@ h1{
 }
 #social li{
     display: inline;
-    padding-right: 3%;
-    padding-left: 3%;
+    padding-right: 2%;
+    padding-left: 2%;
 }
 #social li a{
     color: #F14C38;
+}
+.button {
+    border-radius: 4px;
+    background-color: #F14C38;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    padding: 5px;
+    width: 110px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.button span {
+    color: #F4F1E0;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    font-family: FontAwesome;
+    content: "\f101";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
 }
 #midSection{
     padding-top: 2%;
@@ -56,6 +95,19 @@ h1{
 }
 #midSection h3{
     margin: 0px;
+}
+/*#PracticalStream {display:inline-block; margin-right:10px; width:200px;}*/
+/*#Activities {display:inline-block; width:200px;}*/
+.newspaper {
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+    -webkit-column-gap: 40px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 40px; /* Firefox */
+    column-gap: 40px;
+    -webkit-column-rule: 1px solid #f14c38; /* Chrome, Safari, Opera */
+    -moz-column-rule: 1px solid #f14c38; /* Firefox */
+    column-rule: 1px solid #f14c38;
 }
 ul li{
     list-style: none;
@@ -121,5 +173,16 @@ a:hover{
         padding: 10px;
         background-color: white;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .newspaper {
+        -webkit-column-count: 1; /* Chrome, Safari, Opera */
+        -moz-column-count: 1; /* Firefox */
+        column-count: 1;
+        -webkit-column-gap: 40px; /* Chrome, Safari, Opera */
+        -moz-column-gap: 40px; /* Firefox */
+        column-gap: 0px;
+        -webkit-column-rule: 1px solid #f14c38; /* Chrome, Safari, Opera */
+        -moz-column-rule: 1px solid #f14c38; /* Firefox */
+        column-rule: 1px solid #f14c38;
     }
 }
