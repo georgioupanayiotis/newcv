@@ -41,6 +41,31 @@ h1{
 #social li a{
     color: #F14C38;
 }
+.Apolytirion {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+    -webkit-column-gap: 40px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 40px; /* Firefox */
+    column-gap: 0px;
+    -webkit-column-rule: 1px solid #f14c38; /* Chrome, Safari, Opera */
+    -moz-column-rule: 1px solid #f14c38; /* Firefox */
+    column-rule: 1px solid #f14c38;
+}
+/*#Apolytirion {
+    display: -webkit-flex; /!* Safari *!/
+    -webkit-align-items: center; /!* Safari 7.0+ *!/
+    display: flex;
+    align-items: center;
+}
+#Apolytirion div {
+    -webkit-flex: 1; /!* Safari 6.1+ *!/
+    display:flex;
+    align-items:stretch;
+}
+#Apolytirion div p{
+    padding-top: 3%;
+}*/
 .button {
     border-radius: 4px;
     background-color: #F14C38;
@@ -183,4 +208,7 @@ a:hover{
         -moz-column-rule: 1px solid #f14c38; /* Firefox */
         column-rule: 1px solid #f14c38;
     }
+}
+@media only screen and (max-width: 1155px) {
+
 }
