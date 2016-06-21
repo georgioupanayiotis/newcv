@@ -166,10 +166,7 @@ a:hover{
 }
 .social{
     color: #F4F1E0;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    padding-right: 5%;
-    padding-left: 5%;
+    padding: 3%;
 }
 .social:hover{
     color: #F14C38;
